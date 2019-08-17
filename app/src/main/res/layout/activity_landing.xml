@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.moviedb.page.landing.LandingViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/default_margin"
+                android:paddingTop="@dimen/alternate_margin"
+                android:paddingEnd="@dimen/default_margin"
+                android:paddingBottom="@dimen/alternate_margin"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                <RadioButton
+                    android:id="@+id/buttonFilterPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector"
+                    android:button="@null"
+                    android:paddingStart="@dimen/wide_margin"
+                    android:paddingTop="@dimen/default_margin"
+                    android:paddingEnd="@dimen/wide_margin"
+                    android:paddingBottom="@dimen/default_margin"
+                    android:text="@string/filter_popular"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/buttonFilterRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:background="@drawable/selector"
+                    android:button="@null"
+                    android:paddingStart="@dimen/wide_margin"
+                    android:paddingTop="@dimen/default_margin"
+                    android:paddingEnd="@dimen/wide_margin"
+                    android:paddingBottom="@dimen/default_margin"
+                    android:text="@string/filter_rating"
+                    android:textColor="@android:color/white" />
+
+            </RadioGroup>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/default_margin"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:listitem="@layout/item_movie_poster" />
+
+        <FrameLayout
+            android:id="@+id/containerLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary" />
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
