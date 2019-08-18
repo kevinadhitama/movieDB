@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Movie DB</string>
+    <string name="app_subtitle">"The Movie DB Collection"</string>
+    <string name="filter_popular">Popular</string>
+    <string name="filter_rating">Highest Rating</string>
+    <string name="release_date">"Release date : %1$s"</string>
+    <string name="vote_average_display">"%1$s/10</string>
+    <string name="message_unlike">\"You unlike this movie!\"</string>
+    <string name="message_like">\"You liked this movie!\"</string>
+</resources>
