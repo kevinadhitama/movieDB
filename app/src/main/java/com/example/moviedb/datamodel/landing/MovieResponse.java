@@ -13,6 +13,16 @@ public class MovieResponse {
     private Integer total_pages;
     private List<MovieItem> results;
 
+    public MovieResponse() {
+    }
+
+    public MovieResponse(Integer page, Integer total_results, Integer total_pages, List<MovieItem> results) {
+        this.page = page;
+        this.total_results = total_results;
+        this.total_pages = total_pages;
+        this.results = results;
+    }
+
     public Integer getPage() {
         return page;
     }

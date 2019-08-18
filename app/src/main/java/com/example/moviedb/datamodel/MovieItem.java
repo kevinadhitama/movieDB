@@ -26,6 +26,27 @@ public class MovieItem {
     String overview;
     String release_date;
 
+    public MovieItem() {
+    }
+
+    public MovieItem(Integer vote_count, Integer id, Boolean video, Float vote_average, String title, Double popularity, String poster_path_prefix, String poster_path, String original_language, String original_title, List<Integer> genre_ids, String backdrop_path, Boolean adult, String overview, String release_date) {
+        this.vote_count = vote_count;
+        this.id = id;
+        this.video = video;
+        this.vote_average = vote_average;
+        this.title = title;
+        this.popularity = popularity;
+        this.poster_path_prefix = poster_path_prefix;
+        this.poster_path = poster_path;
+        this.original_language = original_language;
+        this.original_title = original_title;
+        this.genre_ids = genre_ids;
+        this.backdrop_path = backdrop_path;
+        this.adult = adult;
+        this.overview = overview;
+        this.release_date = release_date;
+    }
+
     public void setPosterPathPrefix(String poster_path_prefix) {
         this.poster_path_prefix = poster_path_prefix;
     }

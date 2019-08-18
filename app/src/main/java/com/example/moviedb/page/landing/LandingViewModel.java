@@ -1,8 +1,11 @@
 package com.example.moviedb.page.landing;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.moviedb.constants.PublicConstants;
 import com.example.moviedb.datamodel.MovieItem;
 import com.example.moviedb.provider.MovieProvider;
 
@@ -19,7 +22,8 @@ public class LandingViewModel extends ViewModel {
     private CompositeDisposable mCompositeDisposable;
     private Disposable mDisposable;
     private MovieProvider mMovieProvider;
-    private String currentFilter;
+    private String currentFilter = PublicConstants.FILTER_MOST_POPULAR;
+    String errorMessage;
     MutableLiveData<List<MovieItem>> movieList;
     MutableLiveData<Boolean> loadingPage;
     Boolean loadComplete = true;
@@ -60,7 +64,7 @@ public class LandingViewModel extends ViewModel {
                             loadComplete = true;
                         },
                         err -> {
-
+                           errorMessage = err.getMessage();
                         });
 
         mCompositeDisposable.add(mDisposable);
